@@ -36,6 +36,6 @@ Prime prove di struttura codice PID. Procede con complicazioni la gestione dell'
 * Resoconto 25.06.2020
 ![Immagine 03](https://github.com/albeerto-dev/Brewing_PLC/blob/master/immagine03.png)
 Codice PID ultimato. Tramite prove di simulazione sono riuscito a gestire il valore di output PID.Y in maniera tale da produrre un impulso di una certa lunghezza temporale per l'attivazione dell'SSR. Manca il tuning dei parametri.
-* Resoconto 28.06.2020
+* Resoconto 28.06.2020            
 ![Immagine MAIN](https://github.com/albeerto-dev/Brewing_PLC/blob/master/mainImage_semi_complete.png)     
 Interfaccia MAIN ultimata. Tutti i pulsanti sono stati introdotti. Gli SSR di HLT e BOIL seguono un algoritmo di tipo ON/OFF per il riscaldamento e la tenuta a SET POINT. L'SSR del MASH TUN invece ha la doppia possibilità di eseguire il controllo tramite algoritmo ON/OFF oppure di tipo PID (oppurtunamente tarato) semplicemente premendo il pulsante apposito. I due algoritmi di controllo temperatura sono stati introdotti nel programma tramite FUNCTION BLOCK per avere una maggiore versatilità nel codice. La funzionalità del timer ha come unico scopo la funzione di disattivare l'SSR a fine countdown. Ho implementato un pulsante di EMERGENZA per disattivare tutti gli attuatori contemporaneamente. La struttura del codice è per ora interamente in TESTO STRUTTURATO (ST).
