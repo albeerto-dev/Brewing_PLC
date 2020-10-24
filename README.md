@@ -1,5 +1,7 @@
-# Brewing_PLC
+# Fellow Brewer - PLC <img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/Risorsa%205FELLOW_BREWER_LOGO.png" width="30%" align="right" />
+Un sistema automatico per la produzione della birra:
 PLC programmato tramite piattaforma CODESYS e l'utilizzo di Raspberry Pi per la gestione di I/O con l'utilizzo di una HMI accessibile tramite WebServer.
+Sviluppato da Alberto M. Ramagini
 
 ## Obiettivi di sviluppo 
 *Codice*
@@ -7,13 +9,12 @@ PLC programmato tramite piattaforma CODESYS e l'utilizzo di Raspberry Pi per la 
 - [x] Implementazione modalità manuale
 - [x] Implementazione modalità automatica
 - [ ] Implementazione allarmi
-- [ ] Implementazione I/O
+- [x] Implementazione I/O
 - [x] Implementzaione timer 
 - [x] Implementazione PID
 - [x] Implementazione ON/OFF
 - [x] Implementazione voce MAIN
-- [x] Implementazione voce START A BREW
-- [ ] Implementazione voce SETTINGS
+- [x] Implementazione voce BREW
 - [x] Implementazione voce RECIPE
 
 *Wiring*
@@ -28,11 +29,9 @@ PLC programmato tramite piattaforma CODESYS e l'utilizzo di Raspberry Pi per la 
 
 
 ## Aggiornamenti di sviluppo
-* Resoconto 19.06.2020 //
-![Immagine 01](https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/immagine01.png)
+* Resoconto 19.06.2020 //<img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/immagine01.png"/>
 Dall'imagine 1 si denota la prima struttura dell'interfaccia HMI che consentirà di gestire la varia attrezzera tramite pannello "Settings..." di visualizare "DATA" di poter usare il controllore in modlaità manule "MAIN" e di poter procedere con una completa cotta con la modalità "START A BREW" che consete di insererire una ricetta tramite file .xml o crearla sul momento.
-* Resoconto 22.06.2020 //
-![Immagine 02](https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/immagine02.png)
+* Resoconto 22.06.2020 // <img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/immagine02.png"/>
 Prime prove di struttura codice PID. Procede con complicazioni la gestione dell'impulso basato sui calcoli dell'algoritmo PID. Questa prima versione è basata sul codice in C++ di un precedente progetto personale. La difficolta sta nel tramutare il valore di errore di tipo REAL in un impulso dell'attuatore di una durata consona ed efficace da applicare secondo una finestra temporale di azione da parte dell'SSR.
 * Resoconto 25.06.2020 //
 ![Immagine 03](https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/immagine03.png)
@@ -50,5 +49,9 @@ Finalmente sono arrivato ad un punto di svolta. Da come si vede nell'immagine, s
 Risolto il problema di lettura al momento della selezione della ricetta. Ho appena iniziato lo sviluppo della modalità automatica e si possono già ben vedere tutti i pre-requisiti da soddisfare prima di comiciare la cotta : caricamento dell'acqua e selezione della ricetta (che se mal selezionata genera errore; la selezione avviene tramite scrittura del nome della ricetta nell'apposito riquadro). Ho pensato anche di inserire una progressbar per indicare lo status temporale della cotta e ho avuto l'idea di implementare una modalità semi-automatica che può essere attivata e disattivata a piacimento durante la cotta.
 * Resoconto 19.10.2020 // <img src="https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/Lista_POU_FB_FUN.png" align="right"/>
 Oggi è una buona giornata di commit. Sono stati raggiunti ottimi risultati. Dopo aver recentemente introdotto la lettura delle ricette, ho ora completato l'implementazione della parte interamente automatica. Il meccanismo di utilizzo è come segue: come prima cosa si spuntano le checkbox di verifica di inserimento acqua nelle pentole di impianto. Dopo ciò è possibile selezionare la ricetta, precedentemente creata tramite l'apposito menu "RECIPE". Avvenuto il salvataggio nelle variabili globali, comincia il riscaldamento dell'acqua in entrambe le pentole (se si fa sparge, altrimenti viene riscaldata solo quella di mash). Un avviso indicherà l'inserimento dei grani per iniziare l'ammostamento e dopo averli inseriti si confermerà tramite slider che darà il via a tutti gli step del mash con relativo tempo e temperatura. Terminato il mash si può procedere con lo sparge a corretta temperatura grazie all'azione paralella durante l'azione di ammostamento. Una volta confermato l'inizio di sparge tramite slider, il timer parte. Terminato il timer si richiede all'operatore di confemrare il trasferimento del mosto nel tino di bollitura tramite slider. Una volta confermato si attiva l'SSR del tino di bollitura per portare il  mosto ad ebollizione. Raggiunti circa i 96°C si chiede conferma all'operatore per l'inizio della bollitura tramite slider. Una volta confermato, si attiva il timer di controllo durata della bollitura e in contemporanea una spia luminosa (e sonora in futuro) che avvisa l'operatore di confermare la gettata di luppolo. Terminata la bollitura si disattiva l'SSR della termoresistenza riscaldante e si attiva il relay dell'elettovalvola di raffreddamento o per arrivare a temperatura di hopstand (se richiesto da ricetta) oppure per raffredare il mosto a temperatura di inoculo del lievito. La giornata di cotta è terminata. 
-Nell'immagine di destra si possono osservare tutte le POU e le FB del codice, alcune sono ridondanti, altre no, altre saranno eliminate pechè non utili, ma in linea di massima dovrebbero essere quelle definitive. Inserisco anche un'immagine della HMI dedicata alla modalità automatica abbastanza semplice ed essenziale e che non crei confusione all'operatore. All'interno della cartella images ho allegato anche il DEBUG visivo di una simulazione di cotta tramite valori forzatamente scritti all'interno del PLC per verificare il corretto funzionamento. <img src="https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/HMI_auto.png"/>
-
+Nell'immagine di destra si possono osservare tutte le POU e le FB del codice, alcune sono ridondanti, altre no, altre saranno eliminate pechè non utili, ma in linea di massima dovrebbero essere quelle definitive. Inserisco anche un'immagine della HMI dedicata alla modalità automatica abbastanza semplice ed essenziale e che non crei confusione all'operatore. All'interno della cartella images ho allegato anche il DEBUG visivo di una simulazione di cotta tramite valori forzatamente scritti all'interno del PLC per verificare il corretto funzionamento.
+* Resoconto 24.10.2020 //
+Il progetto cambia ufficialmente nome e diventa "FELLOW BREWER" che dall'inglese può essere tradotto con "collega birraio". Ho scelto questo nome perchè risalta l'importanza di un "collega" durante un faticoso e complesso processo produttivo come quello della produzione del mosto di birra. Collega perchè aiuta a portare a termine i compiti di produzione nel modo più efficiente possibile, riducendo i rischi e aumentado la replicabilità del processo. FELLOW BREWER è un collega/assistente a tutti gli effetti.
+Questo resoconto è l'ultimo riguardante lo sviluppo del codice: lo sviluppo software è terminato (salvo eventi eccezionali per aggiungere funzionalità non ancora pensate).
+Tutti i bug sono stati risolti e tutti tutte le funzionalità sono state implementate correttamente. Il cuore del sistema è chiaramente la funzionalità BREW che consente di produrre un batch in modalità automatica con qualche accortezza da parte dell'operatore. Quest'ultimo dovrà rispondere al PLC durante la cotta così da verificare se alcuni passaggi siano stati effettuati e se si possa procedere allo step successivo. Seguiranno poi spiegazioni più dettagliate alla stesura della tesi o anche in un video spiegazione del codice scritto (ampiamente commentato). Questa è l'HMI:
+<img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/HMI%20definitiva/HMI_main.png" width="48%"  /> <img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/HMI%20definitiva/HMI_recipes.png" width="48%" align="right" /> <img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/HMI%20definitiva/HMI_brew1.png" width="48%" /> <img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/HMI%20definitiva/HMI_brew2.png" width="48%" align="right" /> <img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/HMI%20definitiva/HMI_brew3.png" width="48%" align='right' /> I I pannelli, in ordine: MAIN, RECIPES, BREW/SELECT RECIPE, BREW/RECIPE DATA, BREW/BREWHOUSE
