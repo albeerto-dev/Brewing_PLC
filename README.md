@@ -18,14 +18,14 @@ Sviluppato da Alberto M. Ramagini
 - [x] Implementazione voce RECIPE
 
 *Wiring*
-- [ ] Bozza su breadboard
+- [x] Bozza su breadboard
 - [ ] Disegno su PCB
 - [ ] Realizzazione PCB
 - [ ] Assemblaggio PCB
 - [ ] Cablaggio bassa tensione
-- [ ] Disegno schema circuito bassa tensione
+- [x] Disegno schema circuito bassa tensione
 - [ ] Cablaggio alta tensione 
-- [ ] Disegno schema circuito alta tensione
+- [x] Disegno schema circuito alta tensione
 
 
 ## Aggiornamenti di sviluppo
