@@ -1,6 +1,6 @@
 # Fellow Brewer - PLC <img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/Risorsa%205FELLOW_BREWER_LOGO.png" width="30%" align="right" />
 Un sistema automatico per la produzione del mosto di birra:
-PLC programmato tramite piattaforma CODESYS e l'utilizzo di una Raspberry Pi per la gestione di I/O con l'utilizzo di una HMI accessibile tramite WebServer.
+PLC programmato tramite piattaforma CODESYS in IEC61131 e l'utilizzo di una Raspberry Pi per la gestione di I/O con l'utilizzo di una HMI accessibile tramite WebServer.
 Sviluppato da Alberto M. Ramagini
 
 ## Obiettivi di sviluppo 
