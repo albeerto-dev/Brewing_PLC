@@ -1,6 +1,6 @@
 # Fellow Brewer - PLC <img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/Risorsa%205FELLOW_BREWER_LOGO.png" width="30%" align="right" />
-Un sistema automatico per la produzione della birra:
-PLC programmato tramite piattaforma CODESYS e l'utilizzo di Raspberry Pi per la gestione di I/O con l'utilizzo di una HMI accessibile tramite WebServer.
+Un sistema automatico per la produzione del mosto di birra:
+PLC programmato tramite piattaforma CODESYS in IEC61131 e l'utilizzo di una Raspberry Pi per la gestione di I/O con l'utilizzo di una HMI accessibile tramite WebServer.
 Sviluppato da Alberto M. Ramagini
 
 ## Obiettivi di sviluppo 
@@ -19,8 +19,8 @@ Sviluppato da Alberto M. Ramagini
 
 *Wiring*
 - [x] Bozza su breadboard
-- [ ] Disegno su PCB
-- [ ] Realizzazione PCB
+- [x] Disegno PCB
+- [x] Realizzazione PCB
 - [ ] Assemblaggio PCB
 - [ ] Cablaggio bassa tensione
 - [x] Disegno schema circuito bassa tensione
@@ -54,8 +54,8 @@ Nell'immagine di destra si possono osservare tutte le POU e le FB del codice, al
 Il progetto cambia ufficialmente nome e diventa "FELLOW BREWER" che dall'inglese può essere tradotto con "collega birraio". Ho scelto questo nome perchè risalta l'importanza di un "collega" durante un faticoso e complesso processo produttivo come quello della produzione del mosto di birra. Collega perchè aiuta a portare a termine i compiti di produzione nel modo più efficiente possibile, riducendo i rischi e aumentado la replicabilità del processo. FELLOW BREWER è un collega/assistente a tutti gli effetti.
 Questo resoconto è l'ultimo riguardante lo sviluppo del codice: lo sviluppo software è terminato (salvo eventi eccezionali per aggiungere funzionalità non ancora pensate).
 Tutti i bug sono stati risolti e tutti tutte le funzionalità sono state implementate correttamente. Il cuore del sistema è chiaramente la funzionalità BREW che consente di produrre un batch in modalità automatica con qualche accortezza da parte dell'operatore. Quest'ultimo dovrà rispondere al PLC durante la cotta così da verificare se alcuni passaggi siano stati effettuati e se si possa procedere allo step successivo. Seguiranno poi spiegazioni più dettagliate alla stesura della tesi o anche in un video spiegazione del codice scritto (ampiamente commentato). Questa è l'HMI:
-<img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/HMI%20definitiva/HMI_main.png" width="100%"  /> <img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/HMI%20definitiva/HMI_recipes.png" width="45%" /> <img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/HMI%20definitiva/HMI_brew1.png" width="45%" /> <img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/HMI%20definitiva/HMI_brew2.png" width="45%" /> <img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/HMI%20definitiva/HMI_brew3.png" width="45%"  />
+<img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/HMI%20definitiva/HMI_main.png" width="90%"  /> <img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/HMI%20definitiva/HMI_recipes.png" width="45%" /> <img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/HMI%20definitiva/HMI_brew1.png" width="45%" /> <img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/HMI%20definitiva/HMI_brew2.png" width="45%" /> <img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/HMI%20definitiva/HMI_brew3.png" width="45%"  />
 * Resonto 27.10.2020 //
-Gli schemi elettrici sono stati disegnati tramite KiCAD e completati al meglio. Potrebbero esserci delle modifiche in futuro ma comunque il grosso è stato realizzato. Qui sotto compaiono 2 schemi elttrici: uno approfondisce i collegamenti 5VDC dei PIN della Raspberry Pi con qualche aggiunta di componenti in 220VAC e 12VDC per chiarezza e completezza di progetto; l'altro invece approfondisce il circuito in 220VAC e a 12VDC sfruttati dai segnali della Rappberry Pi. Manca un terzo circuito dove i collegamenti agli attuatori e sensori sono "eliminati" per fare posto alle morsettiere di collegamento che saranno utili sia nella progettazzione della "HAT" (il PCB) sia nel cablaggio del protipo finale.
-<img src= https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Electric_schemes/schemaAC_DC_2.png  />
-<img src= https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Electric_schemes/schema_RaspberryPi.png />
+Gli schemi elettrici sono stati disegnati tramite KiCAD e completati al meglio. Potrebbero esserci delle modifiche in futuro ma comunque il grosso è stato realizzato. Ho disegnato 2 schemi elttrici: uno approfondisce i collegamenti 5VDC dei PIN della Raspberry Pi con qualche aggiunta di componenti in 220VAC e 12VDC per chiarezza e completezza di progetto; l'altro invece approfondisce il circuito in 220VAC e a 12VDC sfruttati dai segnali della Rappberry Pi. Manca un terzo circuito dove i collegamenti agli attuatori e sensori sono "eliminati" per fare posto alle morsettiere di collegamento che saranno utili sia nella progettazzione della "HAT" (il PCB) sia nel cablaggio del protipo finale.
+* Resoconto 02.11.2020 //
+Tutti i circuti sono stati disegnati. Ho mandato in stampa il PCB tramite il portale pcbway.com e tra qualche giorno dovrebbe essere consegnato. Ho avuto la necessità di realizzare: il disegno circuito in 220VAC con l'aggiunta del convertitore 12VDC, il disegno del circuito degli I/O della Raspberry Pi con gli elementi controllati, il disegno del circuito degli I/O della Raspberry Pi con la morsettiere dei vari componenti di progetto (utili alla realizzazione del PCB).All'interno della cartella di reposistory "Schemi e PCB" si possono trovare i file PDF di cui ho scritto. Qui sotto i disegni realizzati: <img src= "https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Schemi%20e%20PCB/PNG/schemaAC_DC_2.png" width="90%" /> <img src= "https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Schemi%20e%20PCB/PNG/rasp_AC_mix.png" width="45%" /> <img src= "https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Schemi%20e%20PCB/PNG/raspberryPi_PIN_TerminalBlock_PCB.png" width="45%" /> <img src= "https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Schemi%20e%20PCB/PNG/PCB_hat.png" width="90%" /> 
