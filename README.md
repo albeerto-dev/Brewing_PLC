@@ -8,7 +8,7 @@ Sviluppato da Alberto M. Ramagini
 - [x] Struttura generale delle varibili globali e SFC / LD / ST
 - [x] Implementazione modalità manuale
 - [x] Implementazione modalità automatica
-- [ ] Implementazione allarmi
+- [x] Implementazione allarmi
 - [x] Implementazione I/O
 - [x] Implementzaione timer 
 - [x] Implementazione PID
@@ -21,12 +21,16 @@ Sviluppato da Alberto M. Ramagini
 - [x] Bozza su breadboard
 - [x] Disegno PCB
 - [x] Realizzazione PCB
-- [ ] Assemblaggio PCB
-- [ ] Cablaggio bassa tensione
+- [x] Assemblaggio PCB
+- [x] Cablaggio bassa tensione
 - [x] Disegno schema circuito bassa tensione
-- [ ] Cablaggio alta tensione 
+- [x] Cablaggio alta tensione 
 - [x] Disegno schema circuito alta tensione
 
+*Test di funzionamento*
+-[x] Input e output basilare
+-[ ] Batch con sola acqua
+-[ ] Batch di produzione mosto di birra
 
 ## Aggiornamenti di sviluppo
 * Resoconto 19.06.2020 //<img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/immagine01.png"/>
@@ -61,4 +65,8 @@ Gli schemi elettrici sono stati disegnati tramite KiCAD e completati al meglio. 
 Tutti i circuti sono stati disegnati. Ho mandato in stampa il PCB tramite il portale pcbway.com e tra qualche giorno dovrebbe essere consegnato. Ho avuto la necessità di realizzare: il disegno circuito in 220VAC con l'aggiunta del convertitore 12VDC, il disegno del circuito degli I/O della Raspberry Pi con gli elementi controllati, il disegno del circuito degli I/O della Raspberry Pi con la morsettiere dei vari componenti di progetto (utili alla realizzazione del PCB).All'interno della cartella di reposistory "Schemi e PCB" si possono trovare i file PDF di cui ho scritto. Qui sotto i disegni realizzati: <img src= "https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Schemi%20e%20PCB/PNG/schemaAC_DC_2.png" width="90%" /> <img src= "https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Schemi%20e%20PCB/PNG/rasp_AC_mix.png" width="45%" /> <img src= "https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Schemi%20e%20PCB/PNG/raspberryPi_PIN_TerminalBlock_PCB.png" width="45%" /> <img src= "https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Schemi%20e%20PCB/PNG/PCB_hat.png" width="90%" /> 
 * Resoconto 09.11.2020 // Il pacco da pcbway.com contente il PCB è stato consegnato. Potrò procedere con l'assemblaggio e la saldatura dei componenti soltanto intorno alla terza o quarta settimana di dicembre dopo aver terminato il corso di formazione in "Tecnologie Birrarie" presso il CERB dell' Università degli Studi di Perugia. 
 * Resoconto 22.12.2020 // Ho saldato e testato tutti i componenti saldati sulla scheda sia tramite test pilotati dal PLC sia tramite tester per verificare il corretto voltaggio degli output. Tutti i led e tutti gli attuatori funzionanano regolarmente. Il funzionamento delle sonde di temperatura DS18B20D è stato verificato tramite l'interfaccia grafica che ha correttamente segnalato la temperatura rilevata.
+
 <img src= "https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Images/PCB_assemblato.jpg" width="40%" /> <img src= "https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Images/Test_PCB.jpg" width="40%" /> 
+* Resoconto 15.01.2021 // Il progetto è completato.                              
+<img src= "https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Images/interno.jpg" width="40%" /> <img src= "https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Images/interno_pannello.jpg" width="50%" /> 
+
