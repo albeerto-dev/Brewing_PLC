@@ -28,9 +28,9 @@ Sviluppato da Alberto M. Ramagini
 - [x] Disegno schema circuito alta tensione
 
 *Test di funzionamento*
--[x] Input e output basilare
--[ ] Batch con sola acqua
--[ ] Batch di produzione mosto di birra
+- [x] Input e output basilare
+- [ ] Batch con sola acqua
+- [ ] Batch di produzione mosto di birra
 
 ## Aggiornamenti di sviluppo
 * Resoconto 19.06.2020 //<img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/immagine01.png"/>
@@ -68,5 +68,7 @@ Tutti i circuti sono stati disegnati. Ho mandato in stampa il PCB tramite il por
 
 <img src= "https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Images/PCB_assemblato.jpg" width="40%" /> <img src= "https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Images/Test_PCB.jpg" width="40%" /> 
 * Resoconto 15.01.2021 // Il progetto è completato.                              
-<img src= "https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Images/interno.jpg" width="40%" /> <img src= "https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Images/interno_pannello.jpg" width="50%" /> 
-
+<img src= "https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Images/interno.jpg" width="40%" /> <img src= "https://github.com/albeerto-dev/Fellow-Brewer/blob/master/Images/interno_pannello.jpg" width="55%" /> 
+* Resoconto 26.01.2021//
+Video dimostrativo del funzionamento del PLC, di tutti i suoi input e output e comprensivo anche di una spiegazione di massima di alcune scelte progettuali sia software che hardaware.       
+[![youtube_video](http://img.youtube.com/vi/YWKq-n6-RVQ/0.jpg)](http://www.youtube.com/watch?v=YWKq-n6-RVQ "video_youtube_fellowBrewer")
