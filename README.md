@@ -29,8 +29,8 @@ Sviluppato da Alberto M. Ramagini
 
 *Test di funzionamento*
 - [x] Input e output basilare
-- [ ] Batch con sola acqua
-- [ ] Batch di produzione mosto di birra
+- [x] Batch con sola acqua
+- [x] Batch di produzione mosto di birra
 
 ## Aggiornamenti di sviluppo
 * Resoconto 19.06.2020 //<img src= "https://github.com/albeerto-dev/Brewing_PLC/blob/master/Images/immagine01.png"/>
